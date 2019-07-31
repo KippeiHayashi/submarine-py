@@ -1,0 +1,250 @@
+Last login: Sat Jul  6 12:01:09 on ttys000
+(base) MBP:~ hayashikippei$ cd Desktop/
+(base) MBP:Desktop hayashikippei$ cd submarine-py/
+(base) MBP:submarine-py hayashikippei$ ruby players/manual_player.rb localhost 2000
+you are connected. please send me initial state.
+please input x, y in 0 ~ 4
+w
+x = ^Cplayers/manual_player.rb:149:in `gets': Interrupt
+	from players/manual_player.rb:149:in `select_position'
+	from players/manual_player.rb:14:in `block in initialize'
+	from players/manual_player.rb:12:in `each'
+	from players/manual_player.rb:12:in `initialize'
+	from players/manual_player.rb:222:in `new'
+	from players/manual_player.rb:222:in `main'
+	from players/manual_player.rb:249:in `<main>'
+
+(base) MBP:submarine-py hayashikippei$ ruby players/manual_player.rb localhost 2000
+TCPSocket.open faild:Connection refused - connect(2) for "localhost" port 2000
+players/manual_player.rb:245:in `main': undefined method `close' for nil:NilClass (NoMethodError)
+Did you mean?  clone
+	from players/manual_player.rb:249:in `<main>'
+(base) MBP:submarine-py hayashikippei$ ruby players/manual_player.rb localhost 2000
+you are connected. please send me initial state.
+please input x, y in 0 ~ 4
+w
+x = 1
+y = 3
+c
+x = 4
+y = 4
+s
+x = 2
+y = 1
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+a
+x = 2
+y = 4
+you attacked [2, 4] near ["s"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |!  |   | c2|
+------------------------
+
+waiting
+enemy attacked [1, 2] near ["w", "s"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |!  |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+a
+x = 1
+y = 2
+you attacked [1, 2] near ["w"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |!  |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+waiting
+enemy attacked [1, 1] near ["s"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |!  | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+a
+x = 0
+y = 1
+you can't attack [0, 1]
+x = 1
+y = 2
+you attacked [1, 2] near ["w"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |!  |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+waiting
+enemy attacked [1, 1] near ["s"]
+enemy ships: w:3 c:2 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |!  | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+a
+x = 1
+y = 0
+you attacked [1, 0] hit c near ["w"]
+enemy ships: w:3 c:1 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |!  |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+waiting
+enemy moved c by >>
+enemy ships: w:3 c:1 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+a
+x = 3
+y = 0
+you attacked [3, 0] hit c near ["w"]
+enemy ships: w:3 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |!  |   |
+------------------------
+ 1 |   |   | s1|   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+waiting
+enemy attacked [2, 1] hit s near []
+enemy ships: w:3 s:1 
+   | 0 | 1 | 2 | 3 | 4 |
+------------------------
+ 0 |   |   |   |   |   |
+------------------------
+ 1 |   |   |!  |   |   |
+------------------------
+ 2 |   |   |   |   |   |
+------------------------
+ 3 |   | w3|   |   |   |
+------------------------
+ 4 |   |   |   |   | c2|
+------------------------
+
+your turn
+select your action:
+m: move
+a: attack
+please input "m" or "a"
+
